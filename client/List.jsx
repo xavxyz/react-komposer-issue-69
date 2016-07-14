@@ -1,8 +1,8 @@
 import React from 'react'
-const List = ({data}) => (
+const List = ({data, listSpecificProps}) => (
   <div>
     {data.map(({id, name}) => (
-      <p>{id} {name}</p>
+      <p key={id}>{listSpecificProps}: {id} {name}</p>
     ))}
   </div>
 )

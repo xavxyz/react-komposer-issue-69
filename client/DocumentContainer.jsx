@@ -10,12 +10,9 @@ export const documentComposer = (props, onData) => {
   onData(null, {data})
 }
 
-const DocumentContainer = (props) => {
-  return React.createElement(
-    //compose(documentComposer)(List),
-    compose(documentComposer)(props.component),
-    props
-  );
+const DocumentContainer = ({component, componentProps}) => {
+  const ComposedComponent = compose(documentComposer)(component);
+  return <ComposedComponent {...componentProps} />;
 };
 
 export default DocumentContainer
